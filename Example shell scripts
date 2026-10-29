@@ -1,0 +1,9 @@
+# scripts/run_table3.sh
+#!/bin/bash
+python src/evaluate.py --config configs/hotpotqa.yaml --checkpoint checkpoints/best.pt
+
+# scripts/run_table4.sh
+python src/evaluate.py --config configs/hotpotqa.yaml --checkpoint checkpoints/best.pt --hop_eval
+
+# scripts/run_ablation.sh
+python src/evaluate.py --config configs/hotpotqa.yaml --checkpoint checkpoints/best.pt --ablation
