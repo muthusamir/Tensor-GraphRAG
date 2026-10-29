@@ -1,0 +1,5 @@
+git clone https://github.com/muthusamir/Tensor-GraphRAG.git
+cd Tensor-GraphRAG
+conda create -n tgr python=3.10
+conda activate tgr
+pip install -r requirements.txt
