@@ -1,1 +1,23 @@
+1. Data Preparation
+# Download HotpotQA (or NQ / MultiRC) and place raw files in data/raw/
+python src/data/preprocess.py \
+    --input data/raw/hotpotqa_dev.json \
+    --output data/processed/hotpotqa
 
+python src/data/hop_split.py \
+    --input data/raw/hotpotqa_dev.json \
+    --output data/hop_splits
+2. Train
+python src/train.py --config configs/hotpotqa.yaml
+3. Evaluate
+# Overall performance (Table 3)
+bash scripts/run_table3.sh
+
+# Reasoning-depth analysis (Table 4)
+bash scripts/run_table4.sh
+
+# Component ablation (Table 6)
+bash scripts/run_ablation.sh
+
+# Latency measurement (Table 5)
+bash scripts/run_latency.sh
